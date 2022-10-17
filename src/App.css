@@ -1,3 +1,10 @@
+body {
+  background: url("./assets/backgroud_clouds2.png") no-repeat center center fixed;
+  height: 100%;
+  width: 100%;
+  background-size: cover;
+}
+
 .App {
   text-align: center;
 }

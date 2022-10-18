@@ -1,6 +1,7 @@
 import Card from "./Card";
 import { useDispatch, useSelector } from "react-redux";
 import { deleteById } from "../redux/slices/cities";
+import NotResults from "./NotResults";
 
 export default function Cards() {
 
@@ -26,6 +27,8 @@ export default function Cards() {
             onClose={() => onClose(c.id)}
           />
         )}
-      </div></div>
+        <NotResults cities={cities.list}/>
+      </div>
+    </div>
   );
 }

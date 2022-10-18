@@ -13,7 +13,7 @@ export default function Cards() {
   }
 
   return (
-    <div className="row">
+    <div className="container-fluid">
       <div className="col d-flex justify-content-center flex-wrap">
         {cities.list?.map((c: any) =>
           <Card

@@ -56,7 +56,7 @@ export default function Navbar() {
                </ul>
                <form className="d-flex" role="search" onSubmit={(e) => e.preventDefault()}>
                   <input
-                     className="form-control me-2"
+                     className="form-control me-2 navSearchbar"
                      type="search"
                      placeholder="Find city..."
                      aria-label="Search"

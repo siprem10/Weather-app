@@ -41,7 +41,7 @@ export default function Navbar() {
          <div className="container">
             <div className="navbar-brand">
                <img className="navIcon" src={icon} alt="404"></img>
-               <span className="navTitle">Weather app</span>
+               <span className="navTitle">Weather App</span>
                <span className="navSpace"></span>
                   <SocialIcon target="_blank" rel="noreferrer" url="https://www.linkedin.com/in/rami-dominguez-full-stack/" fgColor="#fff" className="navIcon"></SocialIcon>
                   <SocialIcon target="_blank" rel="noreferrer" url="https://github.com/siprem10" fgColor="#fff" className="navIcon"></SocialIcon>

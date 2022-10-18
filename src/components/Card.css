@@ -1,3 +1,5 @@
+
+
 .cardWeather {
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     transition: all 0.2s ease;
@@ -5,6 +7,7 @@
     margin: 15px;
     background-color: rgba(230, 230, 230, 0.6) !important;
     width: 300px !important;
+    min-width: 300px !important;
     height: 300px !important;
     border-radius: 30px !important;
     backdrop-filter: blur(15px) !important;

@@ -1,6 +1,5 @@
 import Card from "./Card";
 import { useDispatch, useSelector } from "react-redux";
-import "./Cards.css";
 import { deleteById } from "../redux/slices/cities";
 
 export default function Cards() {
@@ -13,8 +12,8 @@ export default function Cards() {
   }
 
   return (
-    <div className='container'>
-      <div className="row d-flex justify-content-center">
+    <div className="row">
+      <div className="col d-flex justify-content-center flex-wrap">
         {cities.list?.map((c: any) =>
           <Card
             key={c.id}
@@ -27,7 +26,6 @@ export default function Cards() {
             onClose={() => onClose(c.id)}
           />
         )}
-      </div>
-    </div>
+      </div></div>
   );
 }

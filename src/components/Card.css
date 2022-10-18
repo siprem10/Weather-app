@@ -23,7 +23,6 @@
         opacity: 1;
         filter: brightness(2) blur(10px);
     }
-
 }
 
 .cardWeather:hover {

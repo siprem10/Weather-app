@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { SocialIcon } from "react-social-icons";
 import icon from "../assets/weather_icon.png";
 import { addCity } from "../redux/slices/cities";
@@ -13,7 +13,10 @@ export default function Navbar() {
 
    const dispatch = useDispatch<any>();
    const [search, setSearch] = useState<string>("");
-   const cities = useSelector((state: any) => state.cities);
+   const cities = useSelector((state: any) => state.cities);  
+   const pathMain = "/"; 
+   const pathname = useLocation().pathname;
+   const navigate = useNavigate();
 
    function onSearch(e: React.ChangeEvent<HTMLInputElement>): void {
       setSearch(e.target.value);
@@ -29,7 +32,12 @@ export default function Navbar() {
          dispatch(addCity(search));
       } else {
          alert('Oops...', 'The city was already added!');
+      }      
+
+      if(pathname !== pathMain){
+         navigate(pathMain);
       }
+      
       onCleanSearch();
    }
 

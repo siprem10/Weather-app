@@ -28,10 +28,10 @@ export default function MoreCard() {
             <div className="col d-flex justify-content-center flex-wrap">
                 <div className="cardWeather cardMore">
                     <IoMdArrowRoundBack className="moreBtnBack" onClick={onBack} />
-                    <div className="">
+                    <div className="pb-2">
                         <ByHour list={moreInfo.listByHour}></ByHour>
-                        <ByDay list={moreInfo.listByDay}></ByDay>
                     </div>
+                    <ByDay list={moreInfo.listByDay}></ByDay>
                 </div>
             </div>
         </div>

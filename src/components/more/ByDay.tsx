@@ -1,4 +1,4 @@
-import { IoMdWater } from "react-icons/io";
+import { IoIosWater } from "react-icons/io";
 
 import "./ByDay.css";
 
@@ -12,10 +12,10 @@ export default function ByDay({list} : any){
                         <span className="byDayDay">{city.day}</span>
                     </div>
                     <div className="d-flex align-items-center w-100">
-                        <IoMdWater/>
+                        <IoIosWater/>
                         <span className="byDayHumidity pe-1">{city.humidity}%</span>
-                        <img className="byDayIcon" src={city.iconDay} alt="404"></img>
-                        <img className="byDayIcon" src={city.iconNight} alt="404"></img>
+                        <img className="byDayIcon pt-1" src={city.iconDay} alt="404"></img>
+                        <img className="byDayIcon pt-1" src={city.iconNight} alt="404"></img>
                     </div>
                     <div className="d-flex justify-content-end align-items-center w-100">
                         <span className="byDayTemp">{city.tempMax}°</span>

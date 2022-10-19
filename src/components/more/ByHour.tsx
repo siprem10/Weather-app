@@ -1,3 +1,5 @@
+import { IoIosWater } from "react-icons/io";
+
 import "./ByHour.css";
 
 export default function ByHour({ list }: any) {
@@ -8,8 +10,11 @@ export default function ByHour({ list }: any) {
                 <div key={i} className="d-flex flex-column align-items-center">
                     <span className="">{city.hour}</span>
                     <img className="byHourIcon" src={city.icon} alt="404"></img>
-                    <span className="">{city.temp}°</span>
-                    <span className="">{city.humidity}%</span>
+                    <span className="byHourTemp">{city.temp}°</span>
+                    <div className="d-flex align-items-center">                            
+                        <IoIosWater/>
+                        <span className="byHourHumidity">{city.humidity}%</span>                        
+                    </div>                  
                 </div>
             )}
         </div>

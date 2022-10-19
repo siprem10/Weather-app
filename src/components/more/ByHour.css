@@ -1,4 +1,13 @@
 .byHourIcon {
-    height: 60px;
+    height: 40px;
     width: 60px;
+    object-fit: cover;
+}
+
+.byHourTemp {
+    font-weight: 600;
+}
+
+.byHourHumidity {
+   font-size: 12px;
 }

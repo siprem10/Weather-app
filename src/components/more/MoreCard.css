@@ -11,3 +11,7 @@
     transform: scale(1.1);
     color: #7066e0; /*pasar a global xd*/
 }
+
+.cardMore {
+    height: fit-content;
+}

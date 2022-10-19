@@ -3,12 +3,12 @@
     transition: all 0.2s ease;
     padding: 15px;
     margin: 15px;
-    background-color: rgba(230, 230, 230, 0.6) !important;
-    width: 300px !important;
-    min-width: 300px !important;
-    height: 300px !important;
-    border-radius: 30px !important;
-    backdrop-filter: blur(15px) !important;
+    background-color: rgba(230, 230, 230, 0.6);
+    width: 300px;
+    min-width: 300px;
+    height: 300px;
+    border-radius: 30px;
+    backdrop-filter: blur(15px);
     animation: fadeIn 0.5s ease;
 }
 
@@ -31,19 +31,6 @@
 
 .pointer {
     cursor: pointer;
-}
-
-#closeIcon {
-    font-weight: 500;
-    color: red !important;
-    transition: 0.2s;
-}
-
-#closeIcon:hover {
-    cursor: pointer;
-    font-weight: 500;
-    color: red !important;
-    transform: scale(1.02);
 }
 
 .cardTitle {

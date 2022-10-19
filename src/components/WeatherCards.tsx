@@ -18,11 +18,11 @@ export default function WeatherCards() {
         {cities.list?.map((c: any) =>
           <WeatherCard
             key={c.id}
-            max={c.max}
-            min={c.min}
+            tempMax={c.tempMax}
+            tempMin={c.tempMin}
             name={c.name}
             description={c.description}
-            img={c.img}
+            icon={c.icon}
             id={c.id}
             lat={c.lat}
             lon={c.lon}

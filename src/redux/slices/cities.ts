@@ -36,9 +36,9 @@ export const addCity = (search: string) => (dispatch: any) => {
                 const city = {
                     search: wordNormalize(search),
                     id: response.id,
-                    min: Math.round(response.main.temp_min),
-                    max: Math.round(response.main.temp_max),
-                    img: response.weather[0].icon,
+                    tempMin: Math.round(response.main.temp_min),
+                    tempMax: Math.round(response.main.temp_max),
+                    icon: `http://openweathermap.org/img/wn/${response.weather[0].icon}@2x.png`,
                     wind: response.wind.speed,
                     temp: response.main.temp,
                     name: response.name,
@@ -60,7 +60,7 @@ export const addCity = (search: string) => (dispatch: any) => {
         });
 };
 
-export const addCityMoreInfo = (params: string) => (dispatch: any) => {
+export const addCityMoreInfo = (params: string, quantityByHour : number) => (dispatch: any) => {
 
     fetch(`https://api.openweathermap.org/data/2.5/forecast${params}&APPID=${process.env.REACT_APP_API_KEY}&units=metric`)
         .then(response => response.json())
@@ -69,7 +69,7 @@ export const addCityMoreInfo = (params: string) => (dispatch: any) => {
             if (response.cod !== undefined) {
 
                 const city = {
-                    listByHour: getCitiesByHour(response.list, 5),
+                    listByHour: getCitiesByHour(response.list, quantityByHour),
                     listByDay: getCitiesByDay(response.list),
                 };
                 dispatch(setCityMoreInfo(city));
@@ -94,8 +94,9 @@ function getCitiesByHour(list: any, quantity: number): Array<any> {
 
         const city = {
             date: element.dt_txt,
-            icon: element.weather[0].icon,
-            max: element.main.temp,
+            hour: element.dt_txt.substring(11, 16),            
+            icon: `http://openweathermap.org/img/wn/${element.weather[0].icon}@2x.png`,
+            temp: element.main.temp,
             humidity: element.main.humidity
         };
         listByHour.push(city);
@@ -112,33 +113,38 @@ function getCitiesByDay(list: any): Array<any> {
     const listByDay : Array<any> = [];
 
     const city = {
+        day: "",
         iconDay: "",
         iconNight: "",
-        max: "",
-        min: "",
+        tempMax: "",
+        tempMin: "",
         humidity: ""
     };
 
     for (let i = 0; i < list.length; i++) {
 
-        let element = list[i];
-        let elementDay: number = Number(element.dt_txt.substring(8, 10));
-        let elementHour: number = Number(element.dt_txt.substring(11, 13));
+        const element = list[i];
+        const elementDay: number = Number(element.dt_txt.substring(8, 10));
+        const elementHour: number = Number(element.dt_txt.substring(11, 13));
+        const day = new Date(element.dt_txt).toLocaleString('en-us', {  weekday: 'long' });
 
-        if (currentDay === elementDay || (elementHour !== 9 && elementHour !== 21)) continue;
+        if (currentDay === elementDay || (elementHour !== 12 && elementHour !== 21)) continue;
 
-        if (elementHour === 9) {
-            city.iconDay = element.weather[0].icon;
-            city.max = element.main.temp_max;
+        if (elementHour === 12) {
+            city.day = day;
+            city.iconDay = `http://openweathermap.org/img/wn/${element.weather[0].icon}@2x.png`;
+            city.tempMax = element.main.temp_max;
             city.humidity = element.main.humidity;
         }
 
         if (elementHour === 21) {
-            city.iconNight = element.weather[0].icon.replace("d", "n");
-            city.min = element.main.temp_min;
-            listByDay.push(city);
+            city.iconNight = `http://openweathermap.org/img/wn/${element.weather[0].icon}@2x.png`;
+            city.tempMin = element.main.temp_min;
+            console.log(city.day);
+            listByDay.push({...city});
         }
         //console.log(elementHour);
     }
+
     return listByDay;
 }

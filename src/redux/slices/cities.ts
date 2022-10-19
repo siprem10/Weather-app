@@ -84,7 +84,7 @@ export const addCityMoreInfo = (params: string, quantityByHour : number, setLoad
         .catch((error) => {
             console.log(error);
             alert('Oops...', 'Server problem!');
-        }).finally(() => setTimeout(() => setLoading(false), 1000));
+        }).finally(() => setTimeout(() => setLoading(false), 200));
 };
 
 function getCitiesByHour(list: any, quantity: number): Array<any> {

@@ -31,6 +31,10 @@ export default function MoreCard() {
         return !isLoading && Object.keys(moreInfo).length > 0;
     }
 
+    function isNotMoreInfo() : boolean{
+        return !isLoading && !Object.keys(moreInfo).length;
+    }
+
     return (
         <div className="col d-flex justify-content-center flex-wrap">
             <div className="cardWeather cardMore">
@@ -38,6 +42,9 @@ export default function MoreCard() {
                 {isLoading && <div className="d-flex flex-row align-items-center pt-2 pb-2">
                     <MdLocationOn className="moreIconLocation" />                   
                     <h1 className="moreTitle">Loading...</h1>
+                </div>}
+                {isNotMoreInfo() && <div className="d-flex flex-row align-items-center p-2">             
+                    <h1 className="moreTitle">No se encontró el pronóstico extendido!</h1>
                 </div>}
                 {isMoreInfo() && <>                                    
                     <div className="d-flex flex-row align-items-center pt-2 pb-2">

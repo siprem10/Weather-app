@@ -24,8 +24,7 @@ export default function Navbar() {
    }
 
    function onSubmit(): void {
-      if (search === "") return;
-
+      
       if (!checkIfExists(search)) {
          dispatch(addCity(search));
       } else {
@@ -35,7 +34,7 @@ export default function Navbar() {
    }
 
    function checkIfExists(search: string): boolean {
-      return cities.list.find((c: any) => c.search === wordNormalize(search));
+      return cities.list.find((c: any) => wordNormalize(c.search) === wordNormalize(search));
    }
 
    return (
@@ -67,6 +66,7 @@ export default function Navbar() {
                      onChange={onSearch}
                   />
                   <button
+                     disabled={!search.length}
                      className="btn btn-primary navBtnSearch"
                      onClick={onSubmit}
                      type="submit">Search

@@ -13,7 +13,7 @@ export function wordNormalize(word : string) : string {
 
     if(!word.length) return "";
 
-    const normalize = word.normalize('NFKD').replace(/[^\w\s.-_\/]/g, '').toLowerCase();  
+    const normalize = word.normalize('NFKD').replace(/[^\w\s.-_\/]/g, '').replaceAll(" ", "").toLowerCase();  
 
     return normalize;
 }

@@ -19,10 +19,14 @@ export const citySlice = createSlice({
         setCityMoreInfo: (state, action) => {
             state.moreInfo = action.payload;
         },
+
+        cleanMoreInfo: (state) => {
+            state.moreInfo = {};
+        },
     },
 });
 
-export const { setCityList, deleteById, setCityMoreInfo } = citySlice.actions;
+export const { setCityList, deleteById, setCityMoreInfo, cleanMoreInfo } = citySlice.actions;
 
 export default citySlice.reducer;
 
@@ -60,28 +64,27 @@ export const addCity = (search: string) => (dispatch: any) => {
         });
 };
 
-export const addCityMoreInfo = (params: string, quantityByHour : number) => (dispatch: any) => {
+export const addCityMoreInfo = (params: string, quantityByHour : number, setLoading : CallableFunction) => (dispatch: any) => {
 
+    setLoading(true);
     fetch(`https://api.openweathermap.org/data/2.5/forecast${params}&APPID=${process.env.REACT_APP_API_KEY}&units=metric`)
         .then(response => response.json())
         .then((response) => {
 
-            if (response.cod !== undefined) {
+            if (response.cod !== "404") {
 
                 const city = {
+                    cityName: decodeURI(params.replace("?q=", "")),
                     listByHour: getCitiesByHour(response.list, quantityByHour),
                     listByDay: getCitiesByDay(response.list),
                 };
                 dispatch(setCityMoreInfo(city));
-
-            } else {
-                alert('Oops...', 'Server problem!');
             }
         })
         .catch((error) => {
             console.log(error);
             alert('Oops...', 'Server problem!');
-        });
+        }).finally(() => setTimeout(() => setLoading(false), 1000));
 };
 
 function getCitiesByHour(list: any, quantity: number): Array<any> {

@@ -1,5 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import { IoMdClose } from 'react-icons/io';
+
 import "./WeatherCard.css";
 
 export default function WeatherCard(city: any){
@@ -22,7 +23,7 @@ export default function WeatherCard(city: any){
                 <div className="pt-4 pb-1">   
                     <img className="cardImg" src={city.icon} alt="404"></img>
                 </div>
-                <div className="ps-3 pe-3">                    
+                <div className="ps-3 pe-3">                   
                     <h1 className={city.name.length < 15 ? "cardTitle" : "cardTitle cardTxt16"}>{city.name}</h1>
                     <span id="cardMax">{city.tempMax}°C</span>
                     <span id="cardMin">{city.tempMin}°C</span>

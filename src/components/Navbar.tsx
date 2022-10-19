@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 import { SocialIcon } from "react-social-icons";
 import icon from "../assets/weather_icon.png";
 import { addCity } from "../redux/slices/cities";
@@ -40,11 +41,12 @@ export default function Navbar() {
       <nav className="navbar navbar-expand-lg">
          <div className="container">
             <div className="navbar-brand">
-               <img className="navIcon" src={icon} alt="404"></img>
-               <span className="navTitle">Weather App</span>
-               <span className="navSpace"></span>
-                  <SocialIcon target="_blank" rel="noreferrer" url="https://www.linkedin.com/in/rami-dominguez-full-stack/" fgColor="#fff" className="navIcon"></SocialIcon>
-                  <SocialIcon target="_blank" rel="noreferrer" url="https://github.com/siprem10" fgColor="#fff" className="navIcon"></SocialIcon>
+               <Link to="/">
+                  <img className="navIcon" src={icon} alt="404"></img>
+               </Link>
+               <span className="navTitle me-1">Weather App</span>
+               <SocialIcon target="_blank" rel="noreferrer" url="https://www.linkedin.com/in/rami-dominguez-full-stack/" fgColor="#fff" className="navIcon"></SocialIcon>
+               <SocialIcon target="_blank" rel="noreferrer" url="https://github.com/siprem10" fgColor="#fff" className="navIcon"></SocialIcon>
             </div>
             <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                <span className="navbar-toggler-icon"></span>

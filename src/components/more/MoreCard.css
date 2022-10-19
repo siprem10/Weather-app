@@ -15,3 +15,13 @@
 .cardMore {
     height: fit-content;
 }
+
+.moreIconLocation {
+    height: 25px;
+    width: 25px;
+}
+
+.moreTitle {
+    font-size: 25px;
+    margin: 0;
+}

@@ -1,19 +1,27 @@
+import { IoMdWater } from "react-icons/io";
+
 import "./ByDay.css";
 
 export default function ByDay({list} : any){
 
-    console.log(list)
-
     return (
         <div className="d-flex flex-column align-items-center">
             {list?.map((city : any, i : number) => 
-                <div key={i} className="d-flex flex-row justify-content-center">
-                    <span>{city.day}</span>
-                    <span>{city.humidity}%</span>
-                    <img src={city.iconDay} alt="404"></img>
-                    <img src={city.iconNight} alt="404"></img>
-                    <span>{city.tempMax}°</span>
-                    <span>{city.tempMin}°</span>
+                <div key={i} className="d-flex flex-row w-100 justify-content-center align-items-center">
+                    <div className="d-flex align-items-center w-100">
+                        <span className="byDayDay">{city.day}</span>
+                    </div>
+                    <div className="d-flex align-items-center w-100">
+                        <IoMdWater/>
+                        <span className="byDayHumidity pe-1">{city.humidity}%</span>
+                        <img className="byDayIcon" src={city.iconDay} alt="404"></img>
+                        <img className="byDayIcon" src={city.iconNight} alt="404"></img>
+                    </div>
+                    <div className="d-flex justify-content-end align-items-center w-100">
+                        <span className="byDayTemp">{city.tempMax}°</span>
+                        <span className="ps-1 pe-1">/</span>
+                        <span className="byDayTemp">{city.tempMin}°</span>
+                    </div>
                 </div>
             
             )}            

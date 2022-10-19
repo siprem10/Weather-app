@@ -1,4 +1,19 @@
+.byDayDay{
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.byDayHumidity {
+    font-size: 13px;
+}
+
 .byDayIcon {
-    height: 60px;
-    width: 60px;
+    height: 35px;
+    width: 30px;
+    object-fit: cover;
+}
+
+.byDayTemp {
+    font-size: 15px;
+    font-weight: 600;
 }

@@ -10,7 +10,6 @@
     transform: scale(1.1);
 }
 
-
 .navSpace {    
     margin-left: 5px;
 }
@@ -34,4 +33,16 @@
     transform: scale(1.02);
     box-shadow: 0 0 0 0.2rem rgba(183, 178, 239, 0.25) !important;
 }
+
+@media (max-width: 400px) {
+
+    .navIcon {
+        height: 35px !important;
+        width: 35px !important;
+    }
+
+    .navTitle {
+        font-size: 18px;
+    }
+  }
 

@@ -7,7 +7,7 @@ export default function WeatherCard(city: any){
     const navigate : any = useNavigate();
 
     function onMoreInfo() : void {
-        navigate(`/more?lat=${city.lat}&lon=${city.lon}`);
+        navigate(`/more?q=${city.name}`);
     }
 
     function onClose(e : any) : void {

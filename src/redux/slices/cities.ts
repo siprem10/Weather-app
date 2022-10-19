@@ -96,7 +96,7 @@ function getCitiesByHour(list: any, quantity: number): Array<any> {
             date: element.dt_txt,
             hour: element.dt_txt.substring(11, 16),            
             icon: `http://openweathermap.org/img/wn/${element.weather[0].icon}@2x.png`,
-            temp: element.main.temp,
+            temp: Math.round(element.main.temp),
             humidity: element.main.humidity
         };
         listByHour.push(city);
@@ -133,14 +133,13 @@ function getCitiesByDay(list: any): Array<any> {
         if (elementHour === 12) {
             city.day = day;
             city.iconDay = `http://openweathermap.org/img/wn/${element.weather[0].icon}@2x.png`;
-            city.tempMax = element.main.temp_max;
+            city.tempMax = Math.round(element.main.temp_max).toString();
             city.humidity = element.main.humidity;
         }
 
         if (elementHour === 21) {
             city.iconNight = `http://openweathermap.org/img/wn/${element.weather[0].icon}@2x.png`;
-            city.tempMin = element.main.temp_min;
-            console.log(city.day);
+            city.tempMin = Math.round(element.main.temp_min).toString();
             listByDay.push({...city});
         }
         //console.log(elementHour);

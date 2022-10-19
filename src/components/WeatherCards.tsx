@@ -24,8 +24,6 @@ export default function WeatherCards() {
             description={c.description}
             icon={c.icon}
             id={c.id}
-            lat={c.lat}
-            lon={c.lon}
             onClose={() => onClose(c.id)}
           />
         )}

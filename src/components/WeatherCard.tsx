@@ -1,8 +1,8 @@
 import { useNavigate } from "react-router-dom";
 import { IoMdClose } from 'react-icons/io';
-import "./Card.css";
+import "./WeatherCard.css";
 
-export default function Card(city: any){
+export default function WeatherCard(city: any){
 
     const navigate : any = useNavigate();
 

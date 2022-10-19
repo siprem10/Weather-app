@@ -94,7 +94,7 @@ function getCitiesByHour(list: any, quantity: number): Array<any> {
 
         const city = {
             date: element.dt_txt,
-            icon: element.weather.icon,
+            icon: element.weather[0].icon,
             max: element.main.temp,
             humidity: element.main.humidity
         };
@@ -128,13 +128,13 @@ function getCitiesByDay(list: any): Array<any> {
         if (currentDay === elementDay || (elementHour !== 9 && elementHour !== 21)) continue;
 
         if (elementHour === 9) {
-            city.iconDay = element.weather.icon;
+            city.iconDay = element.weather[0].icon;
             city.max = element.main.temp_max;
             city.humidity = element.main.humidity;
         }
 
         if (elementHour === 21) {
-            city.iconNight = element.weather.icon;
+            city.iconNight = element.weather[0].icon.replace("d", "n");
             city.min = element.main.temp_min;
             listByDay.push(city);
         }

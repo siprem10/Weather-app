@@ -1,8 +1,8 @@
-import Cards from './Cards';
+import WeatherCards from './WeatherCards';
 
 export default function Home(){
 
     return (
-        <Cards />
+        <WeatherCards />
     )
 }

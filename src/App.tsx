@@ -2,7 +2,7 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Home from './components/Home';
-import More from './components/More';
+import MoreCard from './components/more/MoreCard';
 
 import './App.css';
 
@@ -13,7 +13,7 @@ function App() {
     <Navbar />  
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/more" element={<More />} />
+        <Route path="/more" element={<MoreCard />} />
       </Routes>
     </BrowserRouter>
   )

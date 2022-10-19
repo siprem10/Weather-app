@@ -5,6 +5,7 @@ import { SocialIcon } from "react-social-icons";
 import icon from "../assets/weather_icon.png";
 import { addCity } from "../redux/slices/cities";
 import { alert, wordNormalize } from "../utils/utils";
+import { FiMenu } from 'react-icons/fi';
 
 import "./Navbar.css";
 
@@ -38,7 +39,7 @@ export default function Navbar() {
    }
 
    return (
-      <nav className="navbar navbar-expand-lg">
+      <nav className="navbar navbar-dark navbar-expand-lg">
          <div className="container">
             <div className="navbar-brand">
                <Link to="/">
@@ -48,10 +49,10 @@ export default function Navbar() {
                <SocialIcon target="_blank" rel="noreferrer" url="https://www.linkedin.com/in/rami-dominguez-full-stack/" fgColor="#fff" className="navIcon"></SocialIcon>
                <SocialIcon target="_blank" rel="noreferrer" url="https://github.com/siprem10" fgColor="#fff" className="navIcon"></SocialIcon>
             </div>
-            <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-               <span className="navbar-toggler-icon"></span>
+            <button className="navbar-toggler navbtnMenu" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+               <FiMenu className="navIconMenu" />
             </button>
-            <div className="collapse navbar-collapse" id="navbarSupportedContent">
+            <div className="collapse show navbar-collapse" id="navbarSupportedContent">
                <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                   <li className="nav-item">
                   </li>

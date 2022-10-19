@@ -24,6 +24,23 @@
     box-shadow: 0 0 0 0.2rem rgba(183, 178, 239, 0.25) !important;
 }
 
+
+.navbtnMenu {
+    background-color: #7066e0 !important;
+    border-color: #b7b2ef  !important;
+    box-shadow: none !important;
+}
+.navbtnMenu:hover {
+    transform: scale(1.02);
+    box-shadow: 0 0 0 0.2rem rgba(183, 178, 239, 0.25) !important;
+}
+
+.navIconMenu {
+    color: white;
+    height: 25px;
+    width: 25px;
+}
+
 .navBtnSearch {
     background-color: #7066e0 !important;
     border-color: #b7b2ef  !important;

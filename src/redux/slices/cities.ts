@@ -74,7 +74,7 @@ export const addCityMoreInfo = (params: string, quantityByHour : number, setLoad
             if (response.cod !== "404") {
 
                 const city = {
-                    cityName: decodeURI(params.replace("?q=", "")),
+                    cityName: response.city.name,
                     listByHour: getCitiesByHour(response.list, quantityByHour),
                     listByDay: getCitiesByDay(response.list),
                 };

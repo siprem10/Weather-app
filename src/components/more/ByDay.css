@@ -3,6 +3,10 @@
     font-weight: 600;
 }
 
+.byDayHumidityIcon {
+    color: #5e51ed;
+}
+
 .byDayHumidity {
     font-size: 13px;
 }

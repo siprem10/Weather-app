@@ -8,6 +8,10 @@
     font-weight: 600;
 }
 
+.byHourHumidityIcon {
+    color: #5e51ed;
+}
+
 .byHourHumidity {
    font-size: 12px;
 }

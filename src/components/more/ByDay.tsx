@@ -12,7 +12,7 @@ export default function ByDay({list} : any){
                         <span className="byDayDay">{city.day}</span>
                     </div>
                     <div className="d-flex align-items-center w-100">
-                        <IoIosWater/>
+                        <IoIosWater className="byDayHumidityIcon"/>
                         <span className="byDayHumidity pe-1">{city.humidity}%</span>
                         <img className="byDayIcon pt-1" src={city.iconDay} alt="404"></img>
                         <img className="byDayIcon pt-1" src={city.iconNight} alt="404"></img>

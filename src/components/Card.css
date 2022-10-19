@@ -1,5 +1,3 @@
-
-
 .cardWeather {
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     transition: all 0.2s ease;
@@ -31,6 +29,10 @@
     transform: scale(1.02);
 }
 
+.pointer {
+    cursor: pointer;
+}
+
 #closeIcon {
     font-weight: 500;
     color: red !important;
@@ -44,11 +46,16 @@
     transform: scale(1.02);
 }
 
-#cardTitle {
+.cardTitle {
+    font-size: 35px;
     margin-block-start: 0;
     margin-block-end: 0;
     padding-block-start: 0;
     padding-block-end: 0;
+}
+
+.cardTxt16 {
+    font-size: 27px;
 }
 
 #cardMax {
@@ -64,7 +71,8 @@
     padding-left: 10px;
 }
 
-#cardImg {
+.cardImg {
     width: 100px;
-    height: 100px;
+    height: 60px; 
+    object-fit: cover;
 }

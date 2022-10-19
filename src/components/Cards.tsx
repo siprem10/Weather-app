@@ -24,6 +24,8 @@ export default function Cards() {
             description={c.description}
             img={c.img}
             id={c.id}
+            lat={c.lat}
+            lon={c.lon}
             onClose={() => onClose(c.id)}
           />
         )}

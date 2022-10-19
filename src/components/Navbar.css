@@ -21,7 +21,7 @@
 
 .navSearchbar:focus,
 .navSearchbar:hover {
-    border-color: #7066e0 !important;
+    border-color: #7066e0 !important; /*pasar a global xd*/
     box-shadow: 0 0 0 0.2rem rgba(183, 178, 239, 0.25) !important;
 }
 

@@ -1,0 +1,13 @@
+/* buscar algo para crear mixings */
+.moreBtnBack {
+    height: 30px;
+    width: 30px;
+    transition: transform 250ms ease, box-shadow 250ms ease;
+}
+
+.moreBtnBack:hover {
+    height: 30px;
+    width: 30px;
+    transform: scale(1.1);
+    color: #7066e0; /*pasar a global xd*/
+}

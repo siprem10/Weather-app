@@ -22,7 +22,7 @@ export default function WeatherCards() {
   }
 
   return (
-    <div className="container-fluid">
+    <div className="container">
       <div className="col d-flex justify-content-center flex-wrap">
         {cities.list?.map((c: any) =>
           <WeatherCard

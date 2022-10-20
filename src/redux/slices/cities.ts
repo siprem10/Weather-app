@@ -31,7 +31,13 @@ export const citySlice = createSlice({
     },
 });
 
-export const { setCityList, deleteById, setCityMoreInfo, cleanMoreInfo } = citySlice.actions;
+export const { 
+    setCityList,
+    deleteById,
+    setCityMoreInfo,
+    cleanMoreInfo,
+    setScrollY
+} = citySlice.actions;
 
 export default citySlice.reducer;
 

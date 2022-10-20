@@ -1,12 +1,21 @@
+import { useEffect } from "react";
 import WeatherCard from "./WeatherCard";
 import { useDispatch, useSelector } from "react-redux";
 import { deleteById } from "../redux/slices/cities";
 import NotResults from "./NotResults";
+import { setViewScrollY } from "../utils/scroll";
 
 export default function WeatherCards() {
 
   const cities = useSelector((state: any) => state.cities);
+  const savedScrollY : number = cities.scrollY;
   const dispatch = useDispatch<any>();
+
+  useEffect(() => {
+    if(savedScrollY !== 0){
+      setViewScrollY(savedScrollY);
+    }
+  }, []);
 
   function onClose(id: number): void {
     dispatch(deleteById(id));

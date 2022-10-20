@@ -1,13 +1,21 @@
 import { useNavigate } from "react-router-dom";
 import { IoMdClose } from 'react-icons/io';
+import { useDispatch } from "react-redux";
+import { setScrollY } from "../redux/slices/cities";
 
 import "./WeatherCard.css";
 
 export default function WeatherCard(city: any){
 
     const navigate : any = useNavigate();
+    const dispatch : any = useDispatch();
+
+    function saveScrollY(){
+        dispatch(setScrollY(window.scrollY));
+    }
 
     function onMoreInfo() : void {
+        saveScrollY();
         navigate(`/more?q=${city.name}`);
     }
 

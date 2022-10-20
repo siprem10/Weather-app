@@ -53,7 +53,7 @@ export default function Navbar() {
                   <img className="navIcon" src={icon} alt="404"></img>
                </Link>
                <span className="navTitle ms-1 me-1">Weather App</span>
-               <SocialIcon target="_blank" rel="noreferrer" url="https://www.linkedin.com/in/rami-dominguez-full-stack/" fgColor="#fff" className="navIcon"></SocialIcon>
+               <SocialIcon target="_blank" rel="noreferrer" url="https://www.linkedin.com/in/rami-dominguez-full-stack/" bgColor="#0a66c2" fgColor="#fff" className="navIcon"></SocialIcon>
                <SocialIcon target="_blank" rel="noreferrer" url="https://github.com/siprem10" fgColor="#fff" className="navIcon"></SocialIcon>
             </div>
             <button className="navbar-toggler navbtnMenu" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">

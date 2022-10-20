@@ -1,9 +1,11 @@
 .navIcon {
     height: 40px !important;
     width: 40px !important;
-    margin-left: 5px;
-    margin-right: 5px;
+    margin-left: 7px;
+    margin-right: 7px;
     transition: all 0.2s ease;
+    box-shadow: 0 0 0 0.1rem rgba(183, 178, 239, 1);
+    border-radius: 50px;
 }
 
 .navIcon:hover {

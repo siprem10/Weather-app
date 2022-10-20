@@ -46,7 +46,7 @@ export default function MoreCard() {
                 {isNotMoreInfo() && <div className="d-flex flex-row align-items-center p-2">             
                     <h1 className="moreTitle">No se encontró el pronóstico extendido!</h1>
                 </div>}
-                {isMoreInfo() && <>                                    
+                {isMoreInfo() && <div className="gAnim">                                    
                     <div className="d-flex flex-row align-items-center pt-2 pb-2">
                         <MdLocationOn className="moreIconLocation" />                   
                         <h1 className="moreTitle">{moreInfo.cityName}</h1>
@@ -55,7 +55,7 @@ export default function MoreCard() {
                         <ByHour list={moreInfo.listByHour}></ByHour>
                     </div>
                     <ByDay list={moreInfo.listByDay}></ByDay>                        
-                </>}       
+                </div>}       
             </div>
         </div>
     )

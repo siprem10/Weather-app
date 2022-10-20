@@ -5,7 +5,8 @@ export const citySlice = createSlice({
     name: "cities",
     initialState: {
         list: [],
-        moreInfo: {}
+        moreInfo: {},
+        scrollY: 0
     },
     reducers: {
         setCityList: (state, action) => {
@@ -22,6 +23,10 @@ export const citySlice = createSlice({
 
         cleanMoreInfo: (state) => {
             state.moreInfo = {};
+        },
+
+        setScrollY: (state, action) => {
+            state.scrollY = action.payload;
         },
     },
 });
@@ -100,7 +105,7 @@ function getCitiesByHour(list: any, quantity: number): Array<any> {
             hour: element.dt_txt.substring(11, 16),            
             icon: `http://openweathermap.org/img/wn/${element.weather[0].icon}@2x.png`,
             temp: Math.round(element.main.temp),
-            humidity: element.main.humidity
+            pop: element.pop * 100
         };
         listByHour.push(city);
         //console.log(city.date);
@@ -119,9 +124,9 @@ function getCitiesByDay(list: any): Array<any> {
         day: "",
         iconDay: "",
         iconNight: "",
-        tempMax: "",
-        tempMin: "",
-        humidity: ""
+        tempMax: 0,
+        tempMin: 0,
+        pop: 0
     };
 
     for (let i = 0; i < list.length; i++) {
@@ -136,13 +141,18 @@ function getCitiesByDay(list: any): Array<any> {
         if (elementHour === 12) {
             city.day = day;
             city.iconDay = `http://openweathermap.org/img/wn/${element.weather[0].icon}@2x.png`;
-            city.tempMax = Math.round(element.main.temp_max).toString();
-            city.humidity = element.main.humidity;
+            city.tempMax = Math.round(element.main.temp_max);
+            city.pop = element.pop * 100;
         }
 
         if (elementHour === 21) {
             city.iconNight = `http://openweathermap.org/img/wn/${element.weather[0].icon}@2x.png`;
-            city.tempMin = Math.round(element.main.temp_min).toString();
+            city.tempMin = Math.round(element.main.temp_min);
+
+            if(city.tempMin > city.tempMax){
+                [city.tempMin, city.tempMax] = [city.tempMax, city.tempMin];
+            }
+
             listByDay.push({...city});
         }
         //console.log(elementHour);

@@ -12,8 +12,8 @@ export default function ByHour({ list }: any) {
                     <img className="byHourIcon" src={city.icon} alt="404"></img>
                     <span className="byHourTemp">{city.temp}°</span>
                     <div className="d-flex align-items-center">                            
-                        <IoIosWater className="byHourHumidityIcon"/>
-                        <span className="byHourHumidity">{city.humidity}%</span>                        
+                        <IoIosWater className="byHourPopIcon"/>
+                        <span className="byHourPop">{city.pop}%</span>                        
                     </div>                  
                 </div>
             )}
